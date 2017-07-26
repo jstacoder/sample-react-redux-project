@@ -45,7 +45,7 @@ let getConfig = (clean_options) => {
 				filename: '[name]-[hash].bundle.js',
 				path: DIST_PATH,
 				chunkFilename: '[name]-chunk-[chunkhash].bundle.js',
-				publicPath: '/dist/'
+				publicPath: '/'
 			},
 			module: {
 				rules: [
@@ -117,6 +117,7 @@ let getConfig = (clean_options) => {
 			// 		format:chalk.bgGreen(chalk.black(':elapsed secs')+'  ')+'\t'+chalk.blue('[:current/:total]')+chalk.green(' { ') + ':bar' +chalk.green(' }')+chalk.red(':percent')+'\t'+chalk.red(' :msg')
 			// 	}
 			// ),
+			GaugePlugin()
 		],
 		devtool:'source-map',
 		stats: {

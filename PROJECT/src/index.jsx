@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore';
 import { AppContainer } from 'react-hot-loader';
 import { loadState } from  './storage';
+import 'bootstrap/dist/css/bootstrap.css';
 
 const store = configureStore();
 // replace above line with below line for persistant state
