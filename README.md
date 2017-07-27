@@ -66,4 +66,4 @@ for more info, and walkthroughs on simple actions like:
 	* adding /binding actions / action types
 	* and more
 
-check out the [[wiki | wiki]]
+check out the [wiki](https://github.com/jstacoder/sample-react-redux-project/wiki)
