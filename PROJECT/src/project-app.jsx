@@ -8,19 +8,21 @@ import { history } from './store/configureStore';
 import App from './components/app';
 
 class ProjectApp extends Component {
-    render(){                
+    render(){
         return (
-            <Router history={history}>                
-                <App {...this.props} />                        
+            <Router history={history}>
+                <App {...this.props} />
             </Router>
         );
     }
 }
 
-const mapStateToProps = (state) =>({        
+const mapStateToProps = (state) =>({
     sample: state.sample,
+    router: state.router,
+    projects:state.projects,
 })
-const mapDispatchToProps = (dispatch) =>({    
+const mapDispatchToProps = (dispatch) =>({
     actions: bindActionCreators(Actions, dispatch)
 });
 
