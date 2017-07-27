@@ -8,6 +8,7 @@ import HomePage from '../home';
 import AboutPage from '../about';
 import ContactPage from '../contact';
 import ProjectsPage from '../projects';
+import TodoPage from '../todos';
 import Navbar from '../navbar';
 
 export default class App extends Component {
@@ -48,6 +49,7 @@ export default class App extends Component {
                         actions={this.props.actions} 
                         {...props} />
                 )} />
+		<Route path='/todos' component={TodoPage} />
             </div>
         );
     }
