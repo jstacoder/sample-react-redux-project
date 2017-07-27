@@ -1,25 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ProjectApp from './project-app';
+import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-import { configureStore } from './store/configureStore';
-import { AppContainer } from 'react-hot-loader';
-import { loadState } from  './storage';
-import 'bootstrap/dist/css/bootstrap.css';
+import { loadState } from './storage';
 
-const store = configureStore();
-// replace above line with below line for persistant state
-//const store = configureStore(loadState('gameData', 'players', 'currentTurn', 'router'));
 
 const render = (Component) =>{
-    return ReactDOM.render(
-        <AppContainer>
-            <Provider store={store}>
-                <Component />
-            </Provider>
-        </AppContainer>,
-        document.getElementById('app')
+    const store = configureStore(
+    //    loadState('projects')
     );
+    return ReactDOM.render(
+        <Provider store={store}>
+            <Component />
+        </Provider>
+    , document.getElementById('app'));
 };
 
 render(ProjectApp);
