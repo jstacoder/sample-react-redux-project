@@ -2,17 +2,17 @@
 
 ### this may act as a starting point for new projects 
 ### using 
-	* react
-	* redux 
-	* webpack
-	* react-bootstrap
-	* react-router
-	* react-router-redux
-	* react-router-bootstrap
-	* persistant state 
-	* custom redux middlewares
-	* babel
-	* es6/7/8 features
+* react
+* redux 
+* webpack
+* react-bootstrap
+* react-router
+* react-router-redux
+* react-router-bootstrap
+* persistant state 
+* custom redux middlewares
+* babel
+* es6/7/8 features
 
 most of these things require a number of things in place to work, 
 
