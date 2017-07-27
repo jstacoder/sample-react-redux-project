@@ -18,7 +18,7 @@ const middlewares = applyMiddleware(
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export function configureStore(initialState){
+export default function configureStore(initialState){
     const store = createStore(
         rootReducer,
         initialState,
