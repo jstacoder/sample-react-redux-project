@@ -7,7 +7,9 @@ import { loadState } from './storage';
 
 
 const render = (Component) =>{
-    const store = configureStore(loadState('projects'));
+    const store = configureStore(
+    //    loadState('projects')
+    );
     return ReactDOM.render(
         <Provider store={store}>
             <Component />

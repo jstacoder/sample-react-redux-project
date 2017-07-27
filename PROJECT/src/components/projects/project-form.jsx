@@ -7,7 +7,11 @@ export default class AddProjectForm extends Component {
     }
     handleClick = (e) =>{
         e.preventDefault();
-        this.props.actions.addProject(this.props.project);
+        if(!this.props.hasProject(this.props.project)){
+            this.props.actions.addProject(this.props.project);
+        }else{
+            alert("project exists!!");
+        }
         this.props.actions.resetProject();
     }
     render(){

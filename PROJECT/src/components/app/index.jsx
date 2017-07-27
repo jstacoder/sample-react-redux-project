@@ -24,8 +24,11 @@ export default class App extends Component {
             this.props.actions.addProject(p);
         });
     }
-    componentWillMount = () =>{            
-        this.addProjects();        
+    componentDidMount = () =>{            
+        //preload some projects the first time we load
+        if(!this.props.projects.projects.length){
+            this.addProjects();
+        }
     }
     render(){
         return (

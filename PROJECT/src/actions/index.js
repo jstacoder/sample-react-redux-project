@@ -8,7 +8,31 @@ export const RESET_CONTACT_INFO = 'RESET_CONTACT_INFO';
 export const ADD_PROJECT = 'ADD_PROJECT';
 export const SET_PROJECT = 'SET_PROJECT';
 export const RESET_PROJECT = 'RESET_PROJECT';
+export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
+// PROJECT RELATED ACTIONS 
+export const removeProject = (project) =>({
+    type: REMOVE_PROJECT,
+    payload:{
+        project,
+    }
+});
+export const resetProject = () =>({
+    type: RESET_PROJECT,
+});
+export const addProject = (project) =>({
+    type: ADD_PROJECT,
+    payload:{
+        project,
+    }
+});
+export const setProject = (project) =>({
+    type: SET_PROJECT,
+    payload:{
+        project,
+    }
+});
+// CONTACT INFO RELATED ACTIONS
 export const setContactInfoName = (name) =>({
     type: SET_CONTACT_INFO_NAME,
     payload:{
@@ -36,21 +60,7 @@ export const setContactInfoComment = (comment) =>({
 export const resetContactInfo = () =>({
     type:RESET_CONTACT_INFO,
 });
-export const resetProject = () =>({
-    type: RESET_PROJECT,
-});
-export const addProject = (project) =>({
-    type: ADD_PROJECT,
-    payload:{
-        project,
-    }
-});
-export const setProject = (project) =>({
-    type: SET_PROJECT,
-    payload:{
-        project,
-    }
-});
+// EXAMPLE ACTIONS
 export const sampleAction = (arg) =>({
     type: SAMPLE_ACTION_TYPE,
     payload:{
