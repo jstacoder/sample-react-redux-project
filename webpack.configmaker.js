@@ -15,7 +15,7 @@ const clean_options = {
     root:BASE_PATH,
     exclude:[],
     verbose: true,
-    dry: true, // set to false to actually start removing files
+    dry: false, // set to false to actually start removing files
 };
 let htmlPluginOptions = {
 	template: require('html-webpack-template'),	

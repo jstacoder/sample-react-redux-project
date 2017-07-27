@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import ProjectApp from './project-app';
 import configureStore from './store/configureStore';
 import { Provider } from 'react-redux';
-
+import { loadState } from './storage';
 
 
 const render = (Component) =>{
-    const store = configureStore();
+    const store = configureStore(loadState('projects'));
     return ReactDOM.render(
         <Provider store={store}>
             <Component />

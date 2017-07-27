@@ -31,8 +31,8 @@ export default function configureStore(initialState){
         });
     }    
     // uncomment for persistant state
-    // store.subscribe(() => {
-    //     saveState(store.getState());
-    // });
+    store.subscribe(() => {
+        saveState(store.getState());
+    });
     return store;
 }

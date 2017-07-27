@@ -34,11 +34,13 @@ class ProjectApp extends Component {
     }
 }
 
-const mapStateToProps = (state) =>({        
+const mapStateToProps = (state) =>({
     sample: state.sample,
     contactInfo: state.contactInfo,
+    router: state.router,
+    projects:state.projects,
 });
-const mapDispatchToProps = (dispatch) =>({    
+const mapDispatchToProps = (dispatch) =>({
     actions: bindActionCreators(Actions, dispatch)
 });
 

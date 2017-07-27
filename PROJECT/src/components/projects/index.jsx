@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { PageHeader, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { PageHeader, ListGroup, ListGroupItem, Row, Col, Thumbnail, Button } from 'react-bootstrap';
+import { Route } from 'react-router';
 
-
-const ProjectPage = ({match}) =>{
-    return (
-        <div> 
-            <h2>{match.params.project_id}</h2>
-            
-        </div>
-    );
-};
+import ProjectPage from './project-page';
+import AddProjectForm from './project-form';
 
 export default class ProjectsPage extends Component {
     render(){
-        return(
+        const projects = this.props.projects.projects;
+        const match = this.props.match;
+        const clickAddProject = this.clickAddProject;
+        return (
             <div>
-            <PageHeader>Projects</PageHeader>
-            <LinkContainer to='/project/proj1'>
-                <Button bsSize="sm">Project 1</Button>
-            </LinkContainer>
-            <LinkContainer to='/project/proj2'>
-                <Button bsSize="sm">Project 2</Button>
-            </LinkContainer>
-            <LinkContainer to='/project/proj3'>
-                <Button bsSize="sm">Project 3</Button>
-            </LinkContainer>
-            <LinkContainer to='/project/proj4'>
-                <Button bsSize="sm">Project 4</Button>
-            </LinkContainer>
-            <Route path='/project/:project_id' component={ProjectPage} />                
-            <Route path='/project' exact render={props =>(
-                <p>Select a project</p>
-            )} />
+                <PageHeader>Projects</PageHeader>
+                <Row>
+                    <Col sm={12}>
+                        <Row>
+                            {projects.map(itm =>{
+                                return (
+                                    <Col xs={12} sm={6} md={4} lg={3} key={itm}>
+                                        <LinkContainer to={`${match.url}/detail/${itm}`}>
+                                            <Thumbnail alt={itm}>{itm}</Thumbnail>
+                                        </LinkContainer>
+                                    </Col>
+                                );
+                            })}
+                        </Row>
+                    </Col>
+                </Row>
+                <Route path={`${match.url}/detail/:project_id`} component={ProjectPage} />
+                <Route path={`${match.url}/add`} exact render={match =>(
+                    <AddProjectForm actions={this.props.actions} project={this.props.projects.project} />
+                )}/>
+            <Route path={`${match.url}/`} exact render={match =>(
+                    <div>
+                        <h3>Please choose a project</h3>
+                        <LinkContainer to={`/project/add`}>
+                            <Button bsSize="sm">add project</Button>
+                        </LinkContainer>
+                    </div>
+                )}/>
             </div>
         );
     }
