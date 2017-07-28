@@ -39,6 +39,7 @@ const mapStateToProps = (state) =>({
     contactInfo: state.contactInfo,
     router: state.router,
     projects:state.projects,
+    todos:state.todos,
 });
 const mapDispatchToProps = (dispatch) =>({
     actions: bindActionCreators(Actions, dispatch)
