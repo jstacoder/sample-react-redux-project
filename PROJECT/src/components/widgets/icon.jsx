@@ -7,7 +7,7 @@ import 'font-awesome/css/font-awesome.css';
 //import 'bootstrap/dist/css/bootstrap.css';
 //require('font-awesome-webpack');
 import classnames from 'classnames';
-function getIcon(name, size, spin, prefix = 'fa', ...props){    
+function getIcon(name, size, spin, prefix = 'fa', onClick = e =>{}, ...props){    
     let iconName = `${prefix}-${name}`;
     let iconSize = `fa-${size}`;
 
@@ -19,8 +19,9 @@ function getIcon(name, size, spin, prefix = 'fa', ...props){
         classOpts[iconSize] = true;
     }
     classOpts[iconName] = true;
+    console.log("ICON: ", props);
     return (
-        <span className={classnames(classOpts)} {...props} ></span>
+        <span className={classnames(classOpts)} onClick={onClick} {...props} ></span>
     );
 }
 
@@ -31,7 +32,7 @@ class Icon extends Component {
             this.props.size,
             this.props.spin,
             this.props.prefix,
-            ...this.props
+            this.props.onClick
         );
     }
 }

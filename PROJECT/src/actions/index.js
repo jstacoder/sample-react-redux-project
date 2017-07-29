@@ -15,10 +15,11 @@ export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
 
 // todo related actions
-export const addTodo = todo =>({
+export const addTodo = ({todo, index}) =>({
     type: ADD_TODO,
     payload:{
-        todo
+        todo,
+        index,
     }
 });
 export const setCurrentTodo = todo =>({
@@ -33,10 +34,10 @@ export const completeTodo = todo =>({
         todo
     }
 });
-export const deleteTodo = todo =>({
+export const deleteTodo = index =>({
     type: DELETE_TODO,
-    payload:{
-        todo
+    payload:{        
+        index,
     }
 });
 
