@@ -52,7 +52,8 @@ export default class App extends Component {
             <Route path='/todos' render={props =>(
                      <TodoPage 
                         actions={this.props.actions} 
-                        {...props}
+                        
+                        {...this.props}
                     />
                 )} />
             </div>
