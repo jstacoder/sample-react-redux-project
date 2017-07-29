@@ -10,3 +10,14 @@ export const removeItem = (array, action) =>([
     ...array.slice(0, action.payload.index),
     ...array.slice(action.payload.index + 1)
 ]);
+
+let idBank;
+
+export const generateId = () =>{
+    if(!idBank){
+        idBank = 1;
+    }else{
+        idBank++;
+    }
+    return idBank;
+};
