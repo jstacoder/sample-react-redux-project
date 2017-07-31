@@ -6,6 +6,7 @@ import createHistory from 'history/createBrowserHistory';
 import ReduxPromise from 'redux-promise-middleware';
 import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
+import { logger } from '../middleware/custom';
 
 export const history = createHistory();
 
@@ -13,7 +14,8 @@ const middlewares = applyMiddleware(
     ReduxPromise(),    
     routerMiddleware(history),
     createLogger(),
-    thunk
+    thunk,
+    logger,
 );
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

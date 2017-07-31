@@ -13,8 +13,26 @@ export const ADD_TODO = 'ADD_TODO';
 export const SET_CURRENT_TODO = 'SET_CURRENT_TODO';
 export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const DELETE_TODO = 'DELETE_TODO';
+export const UNCOMPLETE_TODO = 'UNCOMPLETE_TODO';
+export const UNDELETE_TODO = 'UNDELETE_TODO';
+
 
 // todo related actions
+
+export const uncompleteTodo = todo =>({
+    type: UNCOMPLETE_TODO,
+    payload:{
+        todo,
+    }
+});
+
+export const undeleteTodo = todo =>({
+    type: UNDELETE_TODO,
+    payload:{
+        todo,
+    }
+});
+
 export const addTodo = ({todo, index}) =>({
     type: ADD_TODO,
     payload:{
@@ -34,10 +52,10 @@ export const completeTodo = todo =>({
         todo
     }
 });
-export const deleteTodo = index =>({
+export const deleteTodo = todo =>({
     type: DELETE_TODO,
-    payload:{        
-        index,
+    payload:{
+        todo,
     }
 });
 
