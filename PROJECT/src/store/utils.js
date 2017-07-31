@@ -1,3 +1,8 @@
+import * as uuid from 'uuid';
+
+export const generateId = () =>{
+    return uuid.v4();
+};
 // helpers for adding and removing items without mutating the parent object
 
 export const insertItem = (array, action, item) =>([
@@ -10,14 +15,3 @@ export const removeItem = (array, action) =>([
     ...array.slice(0, action.payload.index),
     ...array.slice(action.payload.index + 1)
 ]);
-
-let idBank;
-
-export const generateId = () =>{
-    if(!idBank){
-        idBank = 1;
-    }else{
-        idBank++;
-    }
-    return idBank;
-};

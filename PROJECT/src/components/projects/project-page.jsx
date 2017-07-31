@@ -7,7 +7,7 @@ import { history } from '../../store/configureStore';
 export default class ProjectPage extends Component{
     removeProject = (project) =>{        
         this.props.actions.removeProject(project);
-        history.replace('/project');
+        history.replace('/project'); 
     }
     getProjectName = () =>{
         const projectName = this.props.match 

@@ -33,19 +33,12 @@ const removeItem = (arr, action) =>{
 const todoReducer = (state = todoState, action) =>{
     switch(action.type){
         case ADD_TODO:
-            return { ...state, todos: insertItem(
-                state.todos,
-                    {...action, payload : 
-                        { ...action.payload, todo : 
-                            {...action.payload.todo, id: 
-                                generateId() 
-                            } 
-                        } 
-                    },'todo'
-                ) 
-            };
+            return { ...state, todos: [ ...state.todos, {...state.currentTodo, id: generateId() } ] };
         case DELETE_TODO:
-            return { ...state, todos: removeItem(state.todos, action) };
+	    console.log('deleteing: ', action);
+            return { ...state, todos: state.todos.filter(todo => (
+		    todo.id != action.payload.index
+	    ))};
         case COMPLETE_TODO:
             return {...state, todos: state.todos.map( todo =>{
                 if(todo.id === action.payload.todo){
@@ -54,7 +47,7 @@ const todoReducer = (state = todoState, action) =>{
                 return todo;
             })};
         case SET_CURRENT_TODO:
-            return {...state, currentTodo: {...state.currentTodo, ...action.payload.todo}};
+            return {...state, currentTodo: action.payload.todo};
         default:
             return state;
     }

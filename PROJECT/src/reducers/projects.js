@@ -5,29 +5,36 @@ const initialState = {
     project:"",
 };
 
-const projects = (state = initialState, action) =>{
-    let newState = {...state};
+const projects = (state = initialState, action) =>{    
     switch(action.type){
         case REMOVE_PROJECT:
-            let projects = [...newState.projects];
+            let projects = [...state.projects];
             const project = action.payload.project;
             const projectIndex = projects.indexOf(project);
-            if(projectIndex > -1){
-                projects.splice(projectIndex, 1);
-                newState.projects = projects;
-            }            
-            return newState;
+            return {
+                ...state,
+                projects: projects.filter((project, index) =>(index != projectIndex))
+            };
         case ADD_PROJECT:
-            newState.projects.push(action.payload.project);
-            return newState;
+            return {
+                ...state,
+                projects: [
+                    ...state.projects,
+                    action.payload.project
+                ]
+            };            
         case SET_PROJECT:
-            newState.project = action.payload.project;
-            return newState;
+            return {
+                ...state,
+                project: action.payload.project
+            };
         case RESET_PROJECT:
-            newState.project = initialState.project;
-            return newState;
+            return {
+                ...state,
+                project: initialState.project
+            };            
         default:
             return state;
     }
-}
- export default projects
+};
+export default projects

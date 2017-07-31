@@ -22,7 +22,7 @@ class ProjectApp extends Component {
                 <AppContainer>                
                     <Grid>
                         <Row>
-                            <Col xs={12}>        
+                            <Col xs={12} md={8} mdPush={2}>        
                                 <Router history={history}>                
                                     <App {...this.props} />                        
                                 </Router>
