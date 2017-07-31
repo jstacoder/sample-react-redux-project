@@ -8,7 +8,7 @@ import { loadState } from './storage';
 
 const render = (Component) =>{
     const store = configureStore(
-    //    loadState('projects')
+        loadState('projects','todos','router')
     );
     return ReactDOM.render(
         <Provider store={store}>

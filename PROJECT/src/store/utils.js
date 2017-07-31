@@ -1,11 +1,5 @@
-
-let idBank;
+import * as uuid from 'uuid';
 
 export const generateId = () =>{
-    if(!idBank){
-        idBank = 1;
-    }else{
-        idBank++;
-    }
-    return idBank;
+    return uuid.v4();
 };

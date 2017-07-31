@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import { PageHeader } from 'react-bootstrap';
+import { PageHeader, Well } from 'react-bootstrap';
 
 export default class HomePage extends Component {
     render(){
         return (
-            <PageHeader>
-                Home
-            </PageHeader>
+            <div>
+                <PageHeader>
+                    Home
+                </PageHeader>
+                <Well>
+                        <h2>My Home Page!!</h2>
+                </Well>
+            </div>
         );
     }
 }

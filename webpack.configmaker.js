@@ -45,7 +45,7 @@ let getConfig = (clean_options) => {
 				filename: '[name]-[hash].bundle.js',
 				path: DIST_PATH,
 				chunkFilename: '[name]-chunk-[chunkhash].bundle.js',
-				publicPath: '/'
+				publicPath: '/dist/'
 			},
 			module: {
 				rules: [

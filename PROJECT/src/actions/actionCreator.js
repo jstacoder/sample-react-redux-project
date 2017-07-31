@@ -4,8 +4,8 @@ export default function createAction(action_name, action_type, payload = {}){
         payload,
     };
     rtnObj[action_name] = function(payload){
-        return dispatch => {
-            dispatch(privateInnerFunc(payload));
+        return dispatch = () => {
+            return dispatch(privateInnerFunc(payload));
         }
         function privateInnerFunc(data){
             return {...rtnObj, payload: data};

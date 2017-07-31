@@ -22,10 +22,12 @@ const TodoItem = (props) =>{
 	const iconClickMap = {
 		incomplete: ()=>{},
 		complete: (idx)=>{
+			console.log('deleting: ', idx);
 			props.actions.deleteTodo(idx);
 		}
+
 	};
-	
+	const textStyle = { marginLeft:'15px' };
 	const itemStyle = { cursor: 'pointer',  ...todoStyles[props.todo.todoState] };
 	const iconClick = iconClickMap[props.todo.todoState];
 	const completeTodo = props.actions.completeTodo;
@@ -46,7 +48,7 @@ const TodoItem = (props) =>{
 			<p>
 				<Icon 					
 					name={iconName} /> 
-				<span> 
+				<span style={textStyle}> 
 					{props.todo.text} 
 				</span> 	
 				<span className="pull-right">
