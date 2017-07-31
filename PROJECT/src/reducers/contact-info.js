@@ -7,27 +7,33 @@ const initialState = {
     email:'',
 };
 
-const contactInfo = (state = initialState, action) =>{
-    let newState = {...state};
+const contactInfo = (state = initialState, action) =>{    
     switch(action.type){
         case SET_CONTACT_INFO_AGE:
-            newState.age = action.payload.age;
-            break;
+            return {
+                ...state, 
+                age: action.payload.age
+            };                   
         case SET_CONTACT_INFO_COMMENT:
-            newState.comment = action.payload.comment;
-            break;
+            return {
+                ...state,
+                comment: action.payload.comment,
+            };        
         case SET_CONTACT_INFO_EMAIL:
-            newState.email = action.payload.email;
-            break;
+            return {
+                ...state, 
+                email: action.payload.email
+            };
         case SET_CONTACT_INFO_NAME:
-            newState.name = action.payload.name;
-            break;
+            return {
+                ...state,
+                name: action.payload.name
+            };            
         case RESET_CONTACT_INFO:
             return initialState;                        
         default:
-            break;
-    }
-    return newState;
+            return state;
+    }    
 };
 
 export default contactInfo

@@ -30,7 +30,7 @@ export default class ProjectsPage extends Component {
                         <Row>
                             {projects.map(itm =>{
                                 return (
-                                    <Col xs={6} sm={3} md={6} lg={6} key={itm}>
+                                    <Col xs={6} sm={3} md={12} lg={12} key={itm}>
                                         <LinkContainer  style={wellStyle} to={`${match.url}/detail/${itm}`}>
                                             <Well bsSize="lg">{itm}</Well>
                                         </LinkContainer>
