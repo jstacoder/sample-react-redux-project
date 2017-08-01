@@ -9,55 +9,6 @@ export const ADD_PROJECT = 'ADD_PROJECT';
 export const SET_PROJECT = 'SET_PROJECT';
 export const RESET_PROJECT = 'RESET_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
-export const ADD_TODO = 'ADD_TODO';
-export const SET_CURRENT_TODO = 'SET_CURRENT_TODO';
-export const COMPLETE_TODO = 'COMPLETE_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
-export const UNCOMPLETE_TODO = 'UNCOMPLETE_TODO';
-export const UNDELETE_TODO = 'UNDELETE_TODO';
-
-
-// todo related actions
-
-export const uncompleteTodo = todo =>({
-    type: UNCOMPLETE_TODO,
-    payload:{
-        todo,
-    }
-});
-
-export const undeleteTodo = todo =>({
-    type: UNDELETE_TODO,
-    payload:{
-        todo,
-    }
-});
-
-export const addTodo = ({todo, index}) =>({
-    type: ADD_TODO,
-    payload:{
-        todo,
-        index,
-    }
-});
-export const setCurrentTodo = todo =>({
-    type: SET_CURRENT_TODO,
-    payload:{
-        todo
-    }
-});
-export const completeTodo = todo =>({
-    type: COMPLETE_TODO,
-    payload: {
-        todo
-    }
-});
-export const deleteTodo = todo =>({
-    type: DELETE_TODO,
-    payload:{
-        todo,
-    }
-});
 
 // PROJECT RELATED ACTIONS 
 export const removeProject = (project) =>({

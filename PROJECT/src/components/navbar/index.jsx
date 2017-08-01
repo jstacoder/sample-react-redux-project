@@ -17,10 +17,7 @@ export default class Navbar extends Component{
                 </LinkContainer>
                 <LinkContainer to='/project'>
                     <NavItem>Projects</NavItem>
-                </LinkContainer>
-                <LinkContainer to='/todos'>
-                    <NavItem>Todos</NavItem>
-                </LinkContainer>
+                </LinkContainer>                
             </Nav>
         );
     }
